@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Adam Group of Catering and Kitchen — Premium catering services and rental kitchen space in Chennai. Weddings, corporate events, biryani specialists." />
+  <title>Adam Group | Catering &amp; Kitchen — Chennai</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold:        '#C9A84C',
+            'gold-light':'#E8C97A',
+            'gold-dark': '#9A7A2E',
+            'gold-pale': '#F5E6C0',
+            maroon:      '#6B0F1A',
+            'maroon-dark':'#4A0A12',
+            'black-deep':'#0A0A0A',
+            'black-wood':'#111008',
+            charcoal:    '#1A1916',
+            'off-white': '#F8F4EC',
+            cream:       '#EDE8DC',
+          },
+          fontFamily: {
+            cinzel:     ['Cinzel', 'serif'],
+            cormorant:  ['Cormorant Garamond', 'serif'],
+            jost:       ['Jost', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Cinzel:wght@400;500;600;700;800;900&family=Jost:wght@200;300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+
+<body class="bg-black-deep text-off-white overflow-x-hidden">
+
+<!-- Startup Loader -->
+<div id="startup-loader" aria-hidden="true">
+  <img src="{{ url_for('static', filename='images/Logo.png') }}" alt="Adam Catering Premium Services logo" class="loader-logo" />
+</div>
+
+<!-- ================================================================
+     STICKY NAVBAR
+     ================================================================ -->
+<nav id="navbar" aria-label="Main Navigation">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+
+    <!-- Left: Catering Logo -->
+    <a href="#catering" class="flex items-center gap-3 group">
+      <div class="logo-circle w-10 h-10 flex items-center justify-center">
+        <i class="fa-solid fa-utensils text-gold text-sm"></i>
+      </div>
+      <span class="font-cinzel text-xs tracking-widest text-gold-pale opacity-80 group-hover:opacity-100 transition-opacity hidden sm:block">ADAM CATERING</span>
+    </a>
+
+    <!-- Center: Nav Links -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#hero" class="nav-link" data-section="hero">Home</a>
+      <a href="#catering" class="nav-link" data-section="catering">Catering</a>
+      <a href="#menu-packages" class="nav-link" data-section="menu-packages">Menu</a>
+      <a href="#kitchen" class="nav-link" data-section="kitchen">Kitchen</a>
+      <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+    </div>
+
+    <!-- Right: Kitchen Logo + Mobile Toggle -->
+    <div class="flex items-center gap-4">
+      <a href="#kitchen" class="hidden sm:flex items-center gap-3 group">
+        <span class="font-cinzel text-xs tracking-widest text-gold-pale opacity-80 group-hover:opacity-100 transition-opacity hidden sm:block text-right">ADAM KITCHEN</span>
+        <div class="logo-circle w-10 h-10 flex items-center justify-center">
+          <i class="fa-solid fa-fire-burner text-gold text-sm"></i>
+        </div>
+      </a>
+      <button id="menu-toggle" class="md:hidden text-gold-pale hover:text-gold transition-colors p-2" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden">
+    <div class="px-6 py-4 flex flex-col gap-5">
+      <a href="#hero" class="nav-link text-sm" data-section="hero">Home</a>
+      <a href="#catering" class="nav-link text-sm" data-section="catering">Catering</a>
+      <a href="#menu-packages" class="nav-link text-sm" data-section="menu-packages">Menu</a>
+      <a href="#kitchen" class="nav-link text-sm">Kitchen</a>
+      <a href="#contact" class="nav-link text-sm">Contact</a>
+      <div class="pt-2 border-t border-gold border-opacity-20">
+        <p class="font-jost text-xs text-gold-pale opacity-60 tracking-wider">99404 12067 &nbsp;|&nbsp; 97100 76969</p>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+<!-- ================================================================
+     SECTION 1 — HERO VIDEO
+     ================================================================ -->
+<section id="hero" aria-label="Hero">
+
+  <!-- Background Video -->
+  <video
+    id="hero-video"
+    autoplay
+    muted
+    loop
+    playsinline
+    aria-hidden="true"
+  >
+    <source src="{{ url_for('static', filename='images/Muslim_Wedding_Food_Video_Generation.mp4') }}" type="video/mp4" />
+    <!-- Fallback poster shown above if video not found -->
+  </video>
+
+  <!-- Dark Overlay -->
+  <div class="hero-overlay" aria-hidden="true"></div>
+
+  <!-- Hero Content -->
+  <div class="hero-content flex flex-col">
+
+    <!-- Top Bar: Center Branding -->
+    <div class="hero-topbar px-6 md:px-12 pt-8 md:pt-10">
+      <div class="hero-main-brand text-center">
+        <p class="section-label hero-est">EST. CHENNAI @ 2026</p>
+        <h1 class="hero-main-title">ADAM CATERING</h1>
+        <div class="gold-divider opacity-80 hero-main-divider"></div>
+      </div>
+    </div>
+
+    <!-- Main Hero Text -->
+    <div class="flex-1 flex flex-col items-center justify-center text-center px-6 -mt-8">
+      
+
+      <h2 class="font-cormorant text-5xl md:text-7xl lg:text-8xl font-light leading-none mb-4 reveal reveal-delay-1">
+        <span class="text-gold-gradient">Premium</span>
+      </h2>
+      <h2 class="font-cinzel text-2xl md:text-4xl lg:text-5xl font-semibold tracking-widest text-off-white mb-8 reveal reveal-delay-2">
+        CULINARY SERVICES
+      </h2>
+
+      <div class="gold-divider mb-8 reveal reveal-delay-3"></div>
+
+      <p class="hero-description font-cormorant text-lg md:text-xl text-off-white opacity-60 max-w-2xl leading-relaxed italic mb-12 reveal reveal-delay-3">
+        Crafting unforgettable dining experiences for your most cherished events — from intimate family gatherings to grand celebrations.
+      </p>
+
+      <a href="#menu-packages" class="btn-explore reveal reveal-delay-4">
+        Explore Our Services
+      </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-indicator-line"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================================================================
+     SECTION 2 — GATEWAY / SPLIT
+     ================================================================ -->
+<section id="gateway" class="hidden">
+
+  <!-- Decorative background element -->
+  <div class="absolute inset-0 flex items-center justify-center opacity-[0.025] pointer-events-none" aria-hidden="true">
+    <span class="font-cinzel font-black text-gold" style="font-size:22vw;white-space:nowrap">ADAM</span>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6">
+    <!-- Sub-header -->
+    <div class="text-center mb-14 relative">
+      <p class="section-label mb-4 reveal">Our Services</p>
+      <h2 class="font-cinzel text-3xl md:text-5xl font-semibold text-off-white tracking-wider reveal reveal-delay-1">
+        Choose Your <span class="text-gold-gradient">Experience</span>
+      </h2>
+      <div class="gold-divider mt-5 reveal reveal-delay-2"></div>
+    </div>
+
+    <!-- Two Gateway Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+
+      <!-- Card 1: Catering -->
+      <a href="#catering" class="gateway-card block group" aria-label="Adam Catering - Experience Gourmet Catering">
+        <img
+          src="https://images.unsplash.com/photo-1555244162-803834f70033?w=900&q=85"
+          alt="Wedding catering setup with rich dishes"
+          loading="lazy"
+        />
+        <div class="gateway-card-overlay"></div>
+        <div class="gateway-card-content">
+          <p class="section-label mb-3 opacity-80">Adam Catering</p>
+          <div class="gateway-divider"></div>
+          <h3 class="font-cinzel text-2xl md:text-3xl font-semibold text-off-white mb-3 leading-snug">
+            Experience Gourmet<br/>Catering.
+          </h3>
+          <p class="font-cormorant text-base md:text-lg text-off-white opacity-65 italic mb-5">
+            Weddings, corporate events &amp; beyond — served with perfection.
+          </p>
+          <span class="font-cinzel text-xs tracking-[0.2em] text-gold border-b border-gold border-opacity-50 pb-0.5 group-hover:border-opacity-100 transition-all">
+            Explore Services →
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 2: Kitchen -->
+      <a href="#kitchen" class="gateway-card block group" aria-label="Adam Kitchen - Host Your Own Kitchen Event">
+        <img
+          src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=85"
+          alt="Large scale biryani cooking in industrial kitchen"
+          loading="lazy"
+        />
+        <div class="gateway-card-overlay"></div>
+        <div class="gateway-card-content">
+          <p class="section-label mb-3 opacity-80">Adam Kitchen</p>
+          <div class="gateway-divider"></div>
+          <h3 class="font-cinzel text-2xl md:text-3xl font-semibold text-off-white mb-3 leading-snug">
+            Host Your Own<br/>Kitchen Event.
+          </h3>
+          <p class="font-cormorant text-base md:text-lg text-off-white opacity-65 italic mb-5">
+            Fully equipped rental space — cook at scale with our premium facilities.
+          </p>
+          <span class="font-cinzel text-xs tracking-[0.2em] text-gold border-b border-gold border-opacity-50 pb-0.5 group-hover:border-opacity-100 transition-all">
+            View Facilities →
+          </span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Stats Bar -->
+    <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-px bg-gold bg-opacity-10 border border-gold border-opacity-10 reveal reveal-delay-3">
+      <div class="bg-black-wood px-8 py-7 text-center">
+        <p class="font-cinzel text-3xl md:text-4xl text-gold-light font-semibold" data-count="500" data-suffix="+">0+</p>
+        <p class="font-jost text-xs tracking-widest text-off-white opacity-40 mt-1 uppercase">Events Catered</p>
+      </div>
+      <div class="bg-black-wood px-8 py-7 text-center">
+        <p class="font-cinzel text-3xl md:text-4xl text-gold-light font-semibold" data-count="3" data-suffix=" Styles">0</p>
+        <p class="font-jost text-xs tracking-widest text-off-white opacity-40 mt-1 uppercase">Biryani Styles</p>
+      </div>
+      <div class="bg-black-wood px-8 py-7 text-center">
+        <p class="font-cinzel text-3xl md:text-4xl text-gold-light font-semibold" data-count="10" data-suffix="+ Yrs">0</p>
+        <p class="font-jost text-xs tracking-widest text-off-white opacity-40 mt-1 uppercase">Of Excellence</p>
+      </div>
+      <div class="bg-black-wood px-8 py-7 text-center">
+        <p class="font-cinzel text-3xl md:text-4xl text-gold-light font-semibold" data-count="6" data-suffix=" Cities">0</p>
+        <p class="font-jost text-xs tracking-widest text-off-white opacity-40 mt-1 uppercase">Served Across TN</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 3 — ADAM CATERING
+     ================================================================ -->
+<section id="catering" class="py-20 md:py-32 relative overflow-hidden" style="background: radial-gradient(ellipse at 20% 50%, rgba(107,15,26,0.12) 0%, transparent 55%), radial-gradient(ellipse at 80% 20%, rgba(201,168,76,0.06) 0%, transparent 45%), linear-gradient(180deg, #0D0B09 0%, #111008 50%, #0D0B09 100%);">
+
+  <div class="section-number" aria-hidden="true">01</div>
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Header -->
+    <div class="mb-16 reveal">
+      <div class="gold-divider-left mb-5"></div>
+      <p class="section-label mb-3">Fine Dining &amp; Events</p>
+      <h2 class="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold text-gold-gradient leading-none tracking-wider mb-3">
+        ADAM CATERING
+      </h2>
+      <p class="font-cormorant text-2xl md:text-3xl text-off-white opacity-60 italic tracking-wide">Premium Services</p>
+    </div>
+
+    <div class="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div class="catering-showcase reveal">
+        <figure class="catering-showcase-frame catering-showcase-featured">
+          <img
+            src="{{ url_for('static', filename='Cooking.jpeg') }}"
+            alt="Adam Catering traditional biryani live cooking setup"
+            loading="lazy"
+            class="w-full object-cover"
+          />
+        </figure>
+        <figure class="catering-showcase-frame catering-showcase-secondary">
+          <img
+            src="{{ url_for('static', filename='images/Gemini_Generated_Image_.jpeg') }}"
+            alt="Adam Catering premium buffet event service"
+            loading="lazy"
+            class="w-full"
+          />
+        </figure>
+      </div>
+      <div class="reveal reveal-delay-2">
+        <p class="font-cormorant text-xl md:text-2xl leading-relaxed text-off-white opacity-80 italic mb-7">
+          A premium catering service designed for weddings, receptions, corporate gatherings and milestone celebrations, crafted to deliver consistent taste and elegant presentation at every scale.
+        </p>
+        <p class="font-jost text-sm leading-relaxed text-off-white opacity-55 mb-8 font-light">
+          Whether you are planning an intimate family function or a high-volume event, Adam Catering provides experienced chefs, disciplined service teams and seamless event coordination from preparation to final plating.
+        </p>
+        <p class="font-jost text-sm leading-relaxed text-off-white opacity-55 mb-8 font-light">
+          Every menu is tailored to your guest profile, venue style and service flow, ensuring a smooth dining experience from welcome counters to final dessert service.
+        </p>
+
+        <div class="space-y-4">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex items-center justify-center border border-gold border-opacity-30 flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-gold text-xs"></i>
+            </div>
+            <div>
+              <p class="font-cinzel text-xs tracking-widest text-gold-pale mb-1">Event Capacity</p>
+              <p class="font-jost text-sm text-off-white opacity-60 font-light">Curated service for 100 to 5,000+ guests with consistent quality.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex items-center justify-center border border-gold border-opacity-30 flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-gold text-xs"></i>
+            </div>
+            <div>
+              <p class="font-cinzel text-xs tracking-widest text-gold-pale mb-1">Cuisine Expertise</p>
+              <p class="font-jost text-sm text-off-white opacity-60 font-light">Specialists in Bengaluru, Chennai and Ambur-style biryani with custom menus.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex items-center justify-center border border-gold border-opacity-30 flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-gold text-xs"></i>
+            </div>
+            <div>
+              <p class="font-cinzel text-xs tracking-widest text-gold-pale mb-1">Service Availability</p>
+              <p class="font-jost text-sm text-off-white opacity-60 font-light">Flexible breakfast, lunch, dinner and full-day event service scheduling.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex items-center justify-center border border-gold border-opacity-30 flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-gold text-xs"></i>
+            </div>
+            <div>
+              <p class="font-cinzel text-xs tracking-widest text-gold-pale mb-1">Menu Personalization</p>
+              <p class="font-jost text-sm text-off-white opacity-60 font-light">Custom menu planning with vegetarian, non-vegetarian and regional preferences for every event type.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex items-center justify-center border border-gold border-opacity-30 flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-gold text-xs"></i>
+            </div>
+            <div>
+              <p class="font-cinzel text-xs tracking-widest text-gold-pale mb-1">Quality &amp; Hygiene</p>
+              <p class="font-jost text-sm text-off-white opacity-60 font-light">Structured kitchen processes, hygienic handling and trained teams for reliable service quality throughout the event.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Biryani Styles — 3 Cards -->
+    <div class="mb-20">
+      <p class="font-cinzel text-xs tracking-[0.3em] text-gold mb-8 uppercase reveal">Our Signature Styles</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Bengaluru Style -->
+        <div class="biryani-card reveal">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=600&q=85"
+              alt="Bengaluru Style Biryani — Fragrant saffron rice with tender meat"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-5 h-px bg-gold opacity-60"></div>
+              <span class="font-cinzel text-[0.6rem] tracking-[0.2em] text-gold uppercase">Signature</span>
+            </div>
+            <h3 class="font-cinzel text-xl font-semibold text-off-white mb-3 tracking-wide">Bengaluru Style</h3>
+            <p class="font-cormorant text-base text-off-white opacity-60 leading-relaxed italic">
+              The Silicon Valley's soulful recipe — slow-cooked basmati layered with aromatic whole spices, caramelised onions and farm-fresh herbs. Subtly smoky, deeply fragrant.
+            </p>
+            <div class="mt-5 flex items-center gap-2">
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <span class="font-jost text-[0.65rem] text-gold-pale opacity-50 ml-2">Guest Favourite</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chennai Style -->
+        <div class="biryani-card reveal reveal-delay-2">
+          <div class="overflow-hidden relative">
+            <img
+              src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=600&q=85"
+              alt="Chennai Style Biryani — Bold Madras spices with marinated meat"
+              loading="lazy"
+            />
+            <div class="absolute top-3 right-3 bg-maroon px-2.5 py-1">
+              <span class="font-cinzel text-[0.55rem] tracking-widest text-gold-pale">SIGNATURE</span>
+            </div>
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-5 h-px bg-gold opacity-60"></div>
+              <span class="font-cinzel text-[0.6rem] tracking-[0.2em] text-gold uppercase">Most Popular</span>
+            </div>
+            <h3 class="font-cinzel text-xl font-semibold text-off-white mb-3 tracking-wide">Chennai Style</h3>
+            <p class="font-cormorant text-base text-off-white opacity-60 leading-relaxed italic">
+              Bold Madras flavours elevated — short-grain rice perfumed with star anise, kalpasi and marinated meat slow-cooked in sealed vessels. The taste of home, perfected.
+            </p>
+            <div class="mt-5 flex items-center gap-2">
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <span class="font-jost text-[0.65rem] text-gold-pale opacity-50 ml-2">Most Ordered</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ambur Style -->
+        <div class="biryani-card reveal reveal-delay-3">
+          <div class="overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1599043513900-ed6fe01d3833?w=600&q=85"
+              alt="Ambur Style Biryani — Heritage seeraga samba rice delicacy"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-6">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-5 h-px bg-gold opacity-60"></div>
+              <span class="font-cinzel text-[0.6rem] tracking-[0.2em] text-gold uppercase">Heritage</span>
+            </div>
+            <h3 class="font-cinzel text-xl font-semibold text-off-white mb-3 tracking-wide">Ambur Style</h3>
+            <p class="font-cormorant text-base text-off-white opacity-60 leading-relaxed italic">
+              A 200-year-old Arcot tradition — prized seeraga samba rice with Nawabi spice blends, raw papaya tenderising and the iconic Ambur brinjal curry on the side.
+            </p>
+            <div class="mt-5 flex items-center gap-2">
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-solid fa-star text-gold text-xs"></i>
+              <i class="fa-regular fa-star text-gold text-xs opacity-50"></i>
+              <span class="font-jost text-[0.65rem] text-gold-pale opacity-50 ml-2">Heritage Recipe</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Menu Packages -->
+    <div id="menu-packages" class="mb-20 border border-gold border-opacity-20 p-6 md:p-10 relative overflow-hidden" style="background: radial-gradient(ellipse at 20% 20%, rgba(201,168,76,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 70%, rgba(107,15,26,0.14) 0%, transparent 55%), #0B0A09;">
+      <div class="text-center mb-12 reveal">
+        <p class="section-label mb-4">Curated Packages</p>
+        <h3 class="font-cinzel text-3xl md:text-5xl font-semibold tracking-wider text-off-white">
+          Our Event <span class="text-gold-gradient">Menu</span>
+        </h3>
+        <div class="gold-divider mt-5 mb-6"></div>
+        <p class="font-cormorant text-lg md:text-xl text-off-white opacity-60 italic max-w-3xl mx-auto">
+          Choose the package that best suits your celebration. Each menu is crafted for balanced flavor, guest satisfaction and smooth service.
+        </p>
+      </div>
+
+      <!-- Menu Highlight Images -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-12 reveal">
+        <div class="relative overflow-hidden group h-52 md:h-60 border border-gold border-opacity-20">
+          <img
+            src="https://images.unsplash.com/photo-1589302168068-964664d93dc0?w=900&q=85"
+            alt="Premium mutton biryani served for catering events"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            style="filter:brightness(0.72) saturate(0.95);"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          <p class="absolute bottom-4 left-4 font-cinzel text-xs tracking-[0.2em] text-gold-pale uppercase">Signature Biryani</p>
+        </div>
+        <div class="relative overflow-hidden group h-52 md:h-60 border border-gold border-opacity-20">
+          <img
+            src="https://www.gharoacatering.com/wp-content/uploads/2024/09/catering-menu-items-well-decorated-in-plate-.jpg"
+            alt="Chicken starters and side dishes for wedding catering"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            style="filter:brightness(0.72) saturate(0.95);"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          <p class="absolute bottom-4 left-4 font-cinzel text-xs tracking-[0.2em] text-gold-pale uppercase">Starters &amp; Sides</p>
+        </div>
+        <div class="relative overflow-hidden group h-52 md:h-60 border border-gold border-opacity-20">
+          <img
+            src="https://image.wedmegood.com/resized/720X/uploads/member/24918157/1718968428_Screenshot_2024_06_21_163658.png"
+            alt="Desserts and ice cream served for special events"
+            loading="lazy"
+            class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            style="filter:brightness(0.72) saturate(0.95);"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+          <p class="absolute bottom-4 left-4 font-cinzel text-xs tracking-[0.2em] text-gold-pale uppercase">Desserts &amp; Finish</p>
+        </div>
+      </div>
+
+      <!-- Package Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-7">
+        <!-- Silver Package -->
+        <article class="border border-gold border-opacity-20 bg-black bg-opacity-20 p-6 md:p-7 reveal">
+          <div class="flex items-center justify-between gap-4 mb-5">
+            <h4 class="font-cinzel text-2xl text-off-white tracking-wider">Silver Package</h4>
+            <span class="font-cinzel text-[0.65rem] tracking-[0.2em] text-gold-pale border border-gold border-opacity-35 px-3 py-1 uppercase">Silver</span>
+          </div>
+          <div class="w-full h-px bg-gradient-to-r from-gold/60 to-transparent mb-5"></div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Welcome Juice / Welcome Tea</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Popcorn / Sweet Candy</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Mutton Biriyani (1:1 / 4 Ratio)</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Chicken 65</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Onion Raita</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Brinjal Chutney</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Bread Halwa</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Ice Cream</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Sweet Beeda</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Water Bottle / Paper Roll / Leaf</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Catering Service Staff</span></li>
+          </ul>
+        </article>
+
+        <!-- Gold Package -->
+        <article class="border border-gold border-opacity-25 bg-black bg-opacity-25 p-6 md:p-7 reveal reveal-delay-1" style="box-shadow: 0 0 0 1px rgba(201,168,76,0.08), 0 14px 35px rgba(0,0,0,0.35);">
+          <div class="flex items-center justify-between gap-4 mb-5">
+            <h4 class="font-cinzel text-2xl text-off-white tracking-wider">Gold Package</h4>
+            <span class="font-cinzel text-[0.65rem] tracking-[0.2em] text-gold border border-gold border-opacity-50 px-3 py-1 uppercase">Gold</span>
+          </div>
+          <div class="w-full h-px bg-gradient-to-r from-gold/70 to-transparent mb-5"></div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Welcome Juice / Welcome Tea</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Popcorn / Sweet Candy</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Mutton Biriyani (1:1 / 4 Ratio)</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Chicken Gravy &amp; Idiyappam</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Chicken 65</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Onion Raita</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Brinjal Chutney</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Bread Halwa / Phirni</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Ice Cream</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Sweet Beeda</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Water Bottle / Paper Roll / Leaf</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Catering Service Staff</span></li>
+          </ul>
+        </article>
+
+        <!-- Diamond Package -->
+        <article class="border border-gold border-opacity-30 bg-black bg-opacity-25 p-6 md:p-7 reveal reveal-delay-2">
+          <div class="flex items-center justify-between gap-4 mb-5">
+            <h4 class="font-cinzel text-2xl text-off-white tracking-wider">Diamond Package</h4>
+            <span class="font-cinzel text-[0.65rem] tracking-[0.2em] text-gold-light border border-gold-light border-opacity-65 px-3 py-1 uppercase">Diamond</span>
+          </div>
+          <div class="w-full h-px bg-gradient-to-r from-gold-light/80 to-transparent mb-5"></div>
+          <ul class="space-y-3">
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Welcome Juice / Welcome Tea</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Popcorn / Sweet Candy</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Mutton Biriyani (1:1 / 2 Ratio)</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Chicken Gravy, Idiyappam &amp; Rumali Roti</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Chicken 65 / Tandoori Chicken</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Onion Raita</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Brinjal Chutney</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Bread Halwa / Phirni</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Ice Cream</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Sweet Beeda</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Water Bottle / Paper Roll / Leaf</span></li>
+            <li class="flex items-start gap-3"><i class="fa-solid fa-check text-gold-light text-xs mt-1.5"></i><span class="font-jost text-sm text-off-white opacity-75 font-light">Catering Service Staff</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- Our Services Grid -->
+    <div class="reveal">
+      <p class="font-cinzel text-xs tracking-[0.3em] text-gold mb-8 uppercase">We Cater For</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+
+        <div class="service-icon-item">
+          <i class="fa-solid fa-heart"></i>
+          <span>Wedding &amp;<br>Reception</span>
+        </div>
+        <div class="service-icon-item reveal-delay-1">
+          <i class="fa-solid fa-briefcase"></i>
+          <span>Corporate<br>Event</span>
+        </div>
+        <div class="service-icon-item reveal-delay-2">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span>Graduation<br>Ceremony</span>
+        </div>
+        <div class="service-icon-item reveal-delay-3">
+          <i class="fa-solid fa-users"></i>
+          <span>Family<br>Event</span>
+        </div>
+        <div class="service-icon-item reveal-delay-4">
+          <i class="fa-solid fa-handshake"></i>
+          <span>Business<br>Event</span>
+        </div>
+        <div class="service-icon-item reveal-delay-5">
+          <i class="fa-solid fa-landmark"></i>
+          <span>Political<br>Event</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Wedding Image Showcase -->
+    
+
+    <!-- CTA -->
+    <div class="mt-14 flex justify-center reveal">
+      <a href="#contact" class="btn-primary-gold">
+        <span class="font-cinzel text-xs tracking-[0.25em]">Request a Catering Quote</span>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 4 — WHY CHOOSE US
+     ================================================================ -->
+<section id="why-choose-us" class="py-20 md:py-24 relative overflow-hidden" style="background: radial-gradient(ellipse at 20% 30%, rgba(201,168,76,0.08) 0%, transparent 55%), linear-gradient(180deg, #0E0C0A 0%, #13110D 100%);">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <p class="section-label mb-4">Our Promise</p>
+      <h2 class="font-cinzel text-3xl md:text-5xl font-semibold tracking-wider text-off-white">
+        Why Choose <span class="text-gold-gradient">Us</span>
+      </h2>
+      <div class="gold-divider mt-5"></div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+      <div class="border border-gold border-opacity-20 bg-black bg-opacity-20 p-6 reveal">
+        <div class="flex items-start gap-4">
+          <i class="fa-solid fa-shield-heart text-gold text-lg mt-1"></i>
+          <div>
+            <p class="font-cinzel text-sm tracking-wider text-gold-pale mb-2">Hygienic Cooking</p>
+            <p class="font-jost text-sm text-off-white opacity-60 font-light">Strict cleaning standards and safe food handling at every stage.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-gold border-opacity-20 bg-black bg-opacity-20 p-6 reveal reveal-delay-1">
+        <div class="flex items-start gap-4">
+          <i class="fa-solid fa-user-chef text-gold text-lg mt-1"></i>
+          <div>
+            <p class="font-cinzel text-sm tracking-wider text-gold-pale mb-2">Experienced Chefs</p>
+            <p class="font-jost text-sm text-off-white opacity-60 font-light">Skilled chefs delivering authentic flavors with consistent quality.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-gold border-opacity-20 bg-black bg-opacity-20 p-6 reveal reveal-delay-2">
+        <div class="flex items-start gap-4">
+          <i class="fa-solid fa-clock text-gold text-lg mt-1"></i>
+          <div>
+            <p class="font-cinzel text-sm tracking-wider text-gold-pale mb-2">On-time Service</p>
+            <p class="font-jost text-sm text-off-white opacity-60 font-light">Reliable teams and punctual delivery for smooth event execution.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-gold border-opacity-20 bg-black bg-opacity-20 p-6 reveal">
+        <div class="flex items-start gap-4">
+          <i class="fa-solid fa-list-check text-gold text-lg mt-1"></i>
+          <div>
+            <p class="font-cinzel text-sm tracking-wider text-gold-pale mb-2">Custom Menu</p>
+            <p class="font-jost text-sm text-off-white opacity-60 font-light">Flexible menu planning based on your taste, guests and event type.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="border border-gold border-opacity-20 bg-black bg-opacity-20 p-6 reveal reveal-delay-1 md:col-span-2 lg:col-span-2">
+        <div class="flex items-start gap-4">
+          <i class="fa-solid fa-indian-rupee-sign text-gold text-lg mt-1"></i>
+          <div>
+            <p class="font-cinzel text-sm tracking-wider text-gold-pale mb-2">Affordable Pricing</p>
+            <p class="font-jost text-sm text-off-white opacity-60 font-light">Premium quality packages with transparent and budget-friendly pricing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 5 — TESTIMONIALS
+     ================================================================ -->
+<section id="testimonials" class="py-20 md:py-24 relative overflow-hidden" style="background: linear-gradient(180deg, #0A0A0A 0%, #100E0B 100%);">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <p class="section-label mb-4">Customer Stories</p>
+      <h2 class="font-cinzel text-3xl md:text-5xl font-semibold tracking-wider text-off-white">
+        Testimonials &amp; <span class="text-gold-gradient">Reviews</span>
+      </h2>
+      <div class="gold-divider mt-5 mb-6"></div>
+      <p class="font-cormorant text-lg md:text-xl text-off-white opacity-60 italic max-w-3xl mx-auto">
+        Trusted by families and event hosts across North and Central Chennai for taste, quality and service.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <article class="border border-gold border-opacity-20 p-6 md:p-7 bg-black bg-opacity-20 reveal">
+        <div class="flex items-center gap-1 mb-4 text-gold">
+          <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+        </div>
+        <p class="font-cormorant text-lg italic leading-relaxed text-off-white opacity-80 mb-5">
+          "Excellent taste and very neat service. They handled our family function perfectly and served everything on time."
+        </p>
+        <p class="font-cinzel text-sm tracking-wider text-gold-pale">Mohammed Kaif</p>
+        <p class="font-jost text-xs uppercase tracking-[0.2em] text-off-white opacity-45 mt-1">Thiruvottiyur</p>
+      </article>
+
+      <article class="border border-gold border-opacity-20 p-6 md:p-7 bg-black bg-opacity-20 reveal reveal-delay-1">
+        <div class="flex items-center gap-1 mb-4 text-gold">
+          <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+        </div>
+        <p class="font-cormorant text-lg italic leading-relaxed text-off-white opacity-80 mb-5">
+          "Biryani quality was top class and the team was very professional. Guests from all age groups enjoyed the menu."
+        </p>
+        <p class="font-cinzel text-sm tracking-wider text-gold-pale">Riyazuddin</p>
+        <p class="font-jost text-xs uppercase tracking-[0.2em] text-off-white opacity-45 mt-1">Kodungaiyur</p>
+      </article>
+
+      <article class="border border-gold border-opacity-20 p-6 md:p-7 bg-black bg-opacity-20 reveal reveal-delay-2">
+        <div class="flex items-center gap-1 mb-4 text-gold">
+          <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-regular fa-star text-xs opacity-60"></i>
+        </div>
+        <p class="font-cormorant text-lg italic leading-relaxed text-off-white opacity-80 mb-5">
+          "Very good coordination from booking to final service. The custom menu and pricing were ideal for our event."
+        </p>
+        <p class="font-cinzel text-sm tracking-wider text-gold-pale">Mohammed Fazil</p>
+        <p class="font-jost text-xs uppercase tracking-[0.2em] text-off-white opacity-45 mt-1">Perambur</p>
+      </article>
+
+      <article class="border border-gold border-opacity-20 p-6 md:p-7 bg-black bg-opacity-20 reveal">
+        <div class="flex items-center gap-1 mb-4 text-gold">
+          <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+        </div>
+        <p class="font-cormorant text-lg italic leading-relaxed text-off-white opacity-80 mb-5">
+          "For our corporate gathering, they delivered premium quality food and maintained excellent hygiene throughout."
+        </p>
+        <p class="font-cinzel text-sm tracking-wider text-gold-pale">Ameer</p>
+        <p class="font-jost text-xs uppercase tracking-[0.2em] text-off-white opacity-45 mt-1">Royapettah</p>
+      </article>
+
+      <article class="border border-gold border-opacity-20 p-6 md:p-7 bg-black bg-opacity-20 reveal reveal-delay-1">
+        <div class="flex items-center gap-1 mb-4 text-gold">
+          <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+        </div>
+        <p class="font-cormorant text-lg italic leading-relaxed text-off-white opacity-80 mb-5">
+          "Highly recommended for weddings. Their on-time delivery and experienced chefs made our day stress-free."
+        </p>
+        <p class="font-cinzel text-sm tracking-wider text-gold-pale">Kumar</p>
+        <p class="font-jost text-xs uppercase tracking-[0.2em] text-off-white opacity-45 mt-1">Mannady</p>
+      </article>
+
+      <article class="border border-gold border-opacity-20 p-6 md:p-7 bg-black bg-opacity-20 reveal reveal-delay-2">
+        <div class="flex items-center gap-1 mb-4 text-gold">
+          <i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i><i class="fa-solid fa-star text-xs"></i>
+        </div>
+        <p class="font-cormorant text-lg italic leading-relaxed text-off-white opacity-80 mb-5">
+          "Great value for money with authentic flavors. Their team was responsive, polite and well organized."
+        </p>
+        <p class="font-cinzel text-sm tracking-wider text-gold-pale">Sanjay</p>
+        <p class="font-jost text-xs uppercase tracking-[0.2em] text-off-white opacity-45 mt-1">Thiruvottiyur</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 7 — ADAM KITCHEN
+     ================================================================ -->
+<section id="kitchen" class="py-20 md:py-32 relative overflow-hidden" style="background: radial-gradient(ellipse at 80% 30%, rgba(201,168,76,0.07) 0%, transparent 50%), radial-gradient(ellipse at 20% 70%, rgba(107,15,26,0.1) 0%, transparent 50%), #0A0A09;">
+
+  <div class="section-number" aria-hidden="true">02</div>
+
+  <!-- Decorative horizontal line -->
+  <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Section Header -->
+    <div class="mb-16 text-right reveal">
+      <div class="flex justify-end mb-5">
+        <div class="gold-divider-left" style="background:linear-gradient(90deg, transparent, var(--gold));"></div>
+      </div>
+      <p class="section-label mb-3">Rental Kitchen Space</p>
+      <h2 class="font-cinzel text-4xl md:text-6xl lg:text-7xl font-bold text-gold-gradient leading-none tracking-wider mb-3">
+        ADAM KITCHEN
+      </h2>
+      <p class="font-cormorant text-2xl md:text-3xl text-off-white opacity-60 italic tracking-wide">Cook at Scale. Cook with Pride.</p>
+    </div>
+
+    <!-- Two-column layout: Text + Image -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+
+      <!-- Left: Description -->
+      <div class="reveal">
+        <p class="font-cormorant text-xl md:text-2xl leading-relaxed text-off-white opacity-75 italic mb-8">
+          A fully equipped, professional-grade kitchen space available for rental — purpose-built for large-scale biryani and traditional Tamil cuisine preparation.
+        </p>
+        <p class="font-jost text-sm leading-relaxed text-off-white opacity-45 mb-8 font-light">
+          Whether you're a caterer handling a bulk order, a community organizer hosting a feast, or a food entrepreneur testing recipes at scale — Adam Kitchen gives you the infrastructure you need. Hygienic, well-maintained, and ready to serve.
+        </p>
+
+        <div class="space-y-4 mb-10">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex items-center justify-center border border-gold border-opacity-30 flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-gold text-xs"></i>
+            </div>
+            <div>
+              <p class="font-cinzel text-xs tracking-widest text-gold-pale mb-1">Capacity</p>
+              <p class="font-jost text-sm text-off-white opacity-50 font-light">Cook for 500 – 5,000 people per session</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex items-center justify-center border border-gold border-opacity-30 flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-gold text-xs"></i>
+            </div>
+            <div>
+              <p class="font-cinzel text-xs tracking-widest text-gold-pale mb-1">Location</p>
+              <p class="font-jost text-sm text-off-white opacity-50 font-light">Thiru.Vi.Ka Nagar, Perambur, North Chennai — easily accessible</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 flex items-center justify-center border border-gold border-opacity-30 flex-shrink-0 mt-0.5">
+              <i class="fa-solid fa-check text-gold text-xs"></i>
+            </div>
+            <div>
+              <p class="font-cinzel text-xs tracking-widest text-gold-pale mb-1">Availability</p>
+              <p class="font-jost text-sm text-off-white opacity-50 font-light">Flexible half-day, full-day and multi-day bookings</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary-gold inline-block">
+          <span class="font-cinzel text-xs tracking-[0.25em]">Check Kitchen Availability</span>
+        </a>
+      </div>
+
+      <!-- Right: Hero Image -->
+      <div class="kitchen-hero-frame reveal reveal-delay-2">
+        <img
+          src="{{ url_for('static', filename='Kitchen.png') }}"
+          alt="Professional large-scale biryani cooking in commercial kitchen — massive steaming pot"
+          loading="lazy"
+        />
+        <!-- Decorative corner accents -->
+        <div class="absolute top-0 left-0 w-5 h-5 border-t border-l border-gold" style="margin:-12px;z-index:2;opacity:0.6" aria-hidden="true"></div>
+        <div class="absolute top-0 right-0 w-5 h-5 border-t border-r border-gold" style="margin:-12px;z-index:2;opacity:0.6" aria-hidden="true"></div>
+        <div class="absolute bottom-0 left-0 w-5 h-5 border-b border-l border-gold" style="margin:-12px;z-index:2;opacity:0.6" aria-hidden="true"></div>
+        <div class="absolute bottom-0 right-0 w-5 h-5 border-b border-r border-gold" style="margin:-12px;z-index:2;opacity:0.6" aria-hidden="true"></div>
+      </div>
+
+    </div>
+
+    <!-- Facilities Grid -->
+    <div class="reveal">
+      <p class="font-cinzel text-xs tracking-[0.3em] text-gold mb-8 uppercase text-center">What's Included</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
+
+        <div class="facility-item">
+          <i class="fa-solid fa-pot-food"></i>
+          <span>Large<br>Vessels</span>
+        </div>
+        <div class="facility-item reveal-delay-1">
+          <i class="fa-solid fa-droplet"></i>
+          <span>Clean<br>Water</span>
+        </div>
+        <div class="facility-item reveal-delay-2">
+          <i class="fa-solid fa-fire-flame-curved"></i>
+          <span>Gas<br>Cylinder</span>
+        </div>
+        <div class="facility-item reveal-delay-3">
+          <i class="fa-solid fa-tree"></i>
+          <span>Fire<br>Wood</span>
+        </div>
+        <div class="facility-item reveal-delay-4">
+          <i class="fa-solid fa-broom"></i>
+          <span>Deep<br>Cleaning</span>
+        </div>
+        <div class="facility-item reveal-delay-5">
+          <i class="fa-solid fa-snowflake"></i>
+          <span>Cold<br>Storage</span>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Rental Info Banner -->
+    <div class="mt-14 border border-gold border-opacity-15 p-8 md:p-10 relative reveal" style="background:rgba(201,168,76,0.03)">
+      <div class="absolute -top-3 left-8">
+        <span class="bg-black-deep px-4 font-cinzel text-xs tracking-[0.2em] text-gold uppercase">Rental Info</span>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div>
+          <i class="fa-regular fa-clock text-gold text-2xl mb-3"></i>
+          <p class="font-cinzel text-sm tracking-wider text-gold-pale mb-1">Flexible Hours</p>
+          <p class="font-jost text-xs text-off-white opacity-40 font-light">Morning, afternoon &amp; overnight sessions available</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-shield-halved text-gold text-2xl mb-3"></i>
+          <p class="font-cinzel text-sm tracking-wider text-gold-pale mb-1">Hygienic &amp; Safe</p>
+          <p class="font-jost text-xs text-off-white opacity-40 font-light">Cleaned and sanitized before every rental session</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-indian-rupee-sign text-gold text-2xl mb-3"></i>
+          <p class="font-cinzel text-sm tracking-wider text-gold-pale mb-1">Competitive Pricing</p>
+          <p class="font-jost text-xs text-off-white opacity-40 font-light">Transparent rates — no hidden charges. Call to enquire.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     SECTION 5 — CONTACT
+     ================================================================ -->
+<section id="contact" class="py-20 md:py-32 relative overflow-hidden" style="background: linear-gradient(180deg, rgba(107,15,26,0.15) 0%, rgba(10,10,10,0.98) 100%), #0A0A0A;">
+
+  <!-- Decorative top border -->
+  <div class="absolute top-0 left-0 right-0 h-px" style="background:linear-gradient(90deg, transparent, rgba(201,168,76,0.3), transparent)" aria-hidden="true"></div>
+
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Header -->
+    <div class="text-center mb-16 reveal">
+      <p class="section-label mb-4">Get in Touch</p>
+      <h2 class="font-cinzel text-3xl md:text-5xl font-semibold text-off-white tracking-wider mb-4">
+        Plan Your <span class="text-gold-gradient">Event</span>
+      </h2>
+      <div class="gold-divider mt-5 mb-6"></div>
+      <p class="font-cormorant text-lg md:text-xl text-off-white opacity-55 italic max-w-xl mx-auto">
+        Share your event details and our team will craft a personalised proposal within 24 hours.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12">
+
+      <!-- Left: Contact Info -->
+      <div class="lg:col-span-2 space-y-10 reveal">
+
+        <div>
+          <p class="font-cinzel text-xs tracking-[0.2em] text-gold uppercase mb-5">Direct Contact</p>
+          <div class="space-y-4">
+            <a href="tel:9940412067" class="flex items-center gap-4 group">
+              <div class="w-10 h-10 border border-gold border-opacity-25 flex items-center justify-center group-hover:border-opacity-70 transition-all">
+                <i class="fa-solid fa-phone text-gold text-sm"></i>
+              </div>
+              <div>
+                <p class="font-cinzel text-xs tracking-widest text-gold-pale opacity-60 group-hover:opacity-100 transition-opacity">Catering</p>
+                <p class="font-jost text-base text-off-white opacity-75 group-hover:opacity-100 transition-opacity">99404 12067</p>
+              </div>
+            </a>
+            <a href="tel:9710076969" class="flex items-center gap-4 group">
+              <div class="w-10 h-10 border border-gold border-opacity-25 flex items-center justify-center group-hover:border-opacity-70 transition-all">
+                <i class="fa-solid fa-phone text-gold text-sm"></i>
+              </div>
+              <div>
+                <p class="font-cinzel text-xs tracking-widest text-gold-pale opacity-60 group-hover:opacity-100 transition-opacity">Kitchen</p>
+                <p class="font-jost text-base text-off-white opacity-75 group-hover:opacity-100 transition-opacity">97100 76969</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="font-cinzel text-xs tracking-[0.2em] text-gold uppercase mb-5">Email Us</p>
+          <a href="mailto:adamcatering26@gmail.com" class="flex items-center gap-4 group">
+            <div class="w-10 h-10 border border-gold border-opacity-25 flex items-center justify-center group-hover:border-opacity-70 transition-all">
+              <i class="fa-solid fa-envelope text-gold text-sm"></i>
+            </div>
+            <p class="font-jost text-sm text-off-white opacity-60 group-hover:opacity-100 transition-opacity break-all">adamcatering26@gmail.com</p>
+          </a>
+        </div>
+
+        <div>
+          <p class="font-cinzel text-xs tracking-[0.2em] text-gold uppercase mb-5">Visit Us</p>
+          <div class="flex items-start gap-4">
+            <div class="w-10 h-10 border border-gold border-opacity-25 flex items-center justify-center flex-shrink-0">
+              <i class="fa-solid fa-location-dot text-gold text-sm"></i>
+            </div>
+            <p class="font-jost text-sm text-off-white opacity-55 leading-relaxed font-light">
+              Old No: 16, New No. 14,<br>
+              Bashyam Street,<br>
+              Thiru.Vi.Ka Nagar, Perambur,<br>
+              Chennai – 600 082
+            </p>
+          </div>
+        </div>
+
+        <!-- Decorative Quote -->
+        <div class="border-l-2 border-gold border-opacity-30 pl-5 mt-4">
+          <p class="font-cormorant text-lg italic text-off-white opacity-45 leading-relaxed">
+            "Every great celebration begins with an exceptional meal."
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div class="lg:col-span-3 reveal reveal-delay-2">
+        <form id="contact-form" novalidate class="space-y-5">
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label for="name" class="contact-label">Full Name *</label>
+              <input type="text" id="name" name="name" class="contact-input" placeholder="Your full name" required autocomplete="name" />
+            </div>
+            <div>
+              <label for="phone" class="contact-label">Phone Number *</label>
+              <input type="tel" id="phone" name="phone" class="contact-input" placeholder="+91 00000 00000" required autocomplete="tel" />
+            </div>
+          </div>
+
+          <div>
+            <label for="email" class="contact-label">Email Address *</label>
+            <input type="email" id="email" name="email" class="contact-input" placeholder="your@email.com" required autocomplete="email" />
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div>
+            <label for="service" class="contact-label">Service Required</label>
+            <select id="service" name="service" class="contact-input">
+              <option value="">— Select Service —</option>
+              <option value="adam-catering">Adam Catering</option>
+              <option value="adam-kitchen">Adam Kitchen</option>
+            </select>
+          </div>
+          <div id="catering-type-wrap" class="hidden">
+            <label for="catering_type" class="contact-label">Catering Type</label>
+            <select id="catering_type" name="catering_type" class="contact-input">
+              <option value="">— Select Catering Type —</option>
+              <option value="wedding">Wedding / Reception</option>
+              <option value="corporate">Corporate Event</option>
+              <option value="graduation">Graduation Ceremony</option>
+              <option value="family">Family Event</option>
+              <option value="business">Business Event</option>
+              <option value="political">Political Event</option>
+            </select>
+          </div>
+          <div id="event-date-wrap">
+            <label for="event_date" class="contact-label">Event Date</label>
+            <input type="date" id="event_date" name="event_date" class="contact-input" />
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="contact-label">Your Message</label>
+            <textarea id="message" name="message" class="contact-input" placeholder="Tell us about your event — expected guests, cuisine preference, any special requirements…"></textarea>
+          </div>
+
+          <div class="pt-2">
+            <button type="submit" id="submit-btn" class="btn-primary-gold w-full md:w-auto flex items-center gap-3 disabled:opacity-60 disabled:cursor-not-allowed">
+              <span class="font-cinzel text-xs tracking-[0.25em]">Send Enquiry</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     FOOTER
+     ================================================================ -->
+<footer class="py-12 md:py-14 relative footer-spacious" style="background:linear-gradient(135deg, #4A0A12 0%, #6B0F1A 50%, #4A0A12 100%); border-top: 1px solid rgba(201,168,76,0.25);">
+
+  <div class="max-w-7xl mx-auto px-6">
+
+    <!-- Top Footer Row -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12 mb-10 pb-10" style="border-bottom: 1px solid rgba(201,168,76,0.15)">
+
+      <!-- Brand -->
+      <div class="flex flex-col gap-5">
+        <div class="flex items-center gap-4">
+          <img src="{{ url_for('static', filename='images/image.png') }}" alt="Adam Catering Logo" class="w-24 h-24 object-contain" />
+          <div>
+            <h3 class="font-cinzel text-lg font-bold text-gold-pale tracking-widest">ADAM CATERING</h3>
+            <p class="font-cormorant italic text-xs text-off-white opacity-50 tracking-wider">and Premium Services</p>
+          </div>
+        </div>
+        <p class="font-jost text-xs text-off-white opacity-45 leading-relaxed font-light max-w-xs">
+          Chennai's premier catering and kitchen rental service — where every meal tells a story of passion, tradition and craft.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <p class="font-cinzel text-xs tracking-[0.2em] text-gold mb-5 uppercase">Quick Links</p>
+        <ul class="space-y-3.5">
+          <li><a href="#hero" class="font-jost text-sm text-off-white opacity-50 hover:opacity-90 hover:text-gold-pale transition-all">Home</a></li>
+          <li><a href="#catering" class="font-jost text-sm text-off-white opacity-50 hover:opacity-90 hover:text-gold-pale transition-all">Adam Catering</a></li>
+          <li><a href="#kitchen" class="font-jost text-sm text-off-white opacity-50 hover:opacity-90 hover:text-gold-pale transition-all">Adam Kitchen</a></li>
+          <li><a href="#contact" class="font-jost text-sm text-off-white opacity-50 hover:opacity-90 hover:text-gold-pale transition-all">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Address + Contact -->
+      <div>
+        <p class="font-cinzel text-xs tracking-[0.2em] text-gold mb-5 uppercase">Find Us</p>
+        <div class="space-y-4">
+          <div class="flex items-start gap-3">
+            <i class="fa-solid fa-location-dot text-gold text-sm mt-0.5 flex-shrink-0"></i>
+            <p class="font-jost text-xs text-off-white opacity-55 leading-relaxed font-light">
+              Old No: 16, New No. 14, Bashyam Street,<br>
+              Thiru.Vi.Ka Nagar, Perambur, Chennai – 600 082
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-phone text-gold text-sm flex-shrink-0"></i>
+            <div>
+              <a href="tel:9940412067" class="font-jost text-xs text-off-white opacity-55 hover:opacity-90 transition-opacity block">99404 12067</a>
+              <a href="tel:9710076969" class="font-jost text-xs text-off-white opacity-55 hover:opacity-90 transition-opacity block">97100 76969</a>
+            </div>
+          </div>
+          <div class="flex items-center gap-3">
+            <i class="fa-solid fa-envelope text-gold text-sm flex-shrink-0"></i>
+            <a href="mailto:adamcatering26@gmail.com" class="font-jost text-xs text-off-white opacity-55 hover:opacity-90 transition-opacity break-all">adamcatering26@gmail.com</a>
+          </div>
+          <div class="flex items-center gap-3">
+            <i class="fa-brands fa-instagram text-gold text-sm flex-shrink-0"></i>
+            <a href="https://www.instagram.com/adam_catering.26?igsh=Z3Bzb3hyYjF5Y2R3" target="_blank" rel="noopener noreferrer" class="font-jost text-xs text-off-white opacity-55 hover:opacity-90 transition-opacity">
+              Follow us on Instagram
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom Footer -->
+    <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="font-jost text-xs text-off-white opacity-30 font-light">
+        &copy; 2026 ADAM CATERING
+        and Premium Services. All rights reserved.
+      </p>
+      <p class="font-cinzel text-xs tracking-widest text-gold opacity-40">
+        CHENNAI &nbsp;·&nbsp; TAMIL NADU
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+<!-- Toast Notification -->
+<div id="toast" role="alert" aria-live="polite"></div>
+
+<!-- JavaScript -->
+<script src="{{ url_for('static', filename='js/main.js') }}"></script>
+<!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+<script src="https://elfsightcdn.com/platform.js" async></script>
+<div class="elfsight-app-49830a14-cd17-4e7f-8f6a-d4fed5718045" data-elfsight-app-lazy></div>
+
+</body>
+</html>
